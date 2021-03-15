@@ -21,21 +21,27 @@ public class TicTocToe
         }
         System.out.println("Computer Letter is: " + ComputerLetter+" User Letter is : " + UserLetter);
         showBoard(board);
-        int userMove = getUserMove(board);
+        getUserMove(board,UserLetter);
         showBoard(board);
     }
-    public static int getUserMove(char[] board)
+    public static void getUserMove(char[] board, char symbol)
     {
         Scanner sc = new Scanner(System.in);
         Integer[] validCells = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 
-
-        while (true)
+	Boolean value = false;
+        while (value == false)
         {
 		System.out.println("What is your next move ? (1-9");
 		int index = sc.nextInt();
-            	if (Arrays.asList(validCells).contains(index) && isSpaceFree(board, index))
-			return index;
+            	if (Arrays.asList(validCells).contains(index) && isSpaceFree(board, index)) {
+			board[index] = symbol;
+			value = true;
+		} else {
+
+			System.out.println("Invalid Choice, please enter a number between 1-9.");
+		}
+
 	}
 
     }
