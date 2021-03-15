@@ -7,6 +7,7 @@ public class TicTocToe {
 	public static void main(String[] args) {
 		System.out.println("Welcome to TicToeTac Game");
 		char [] Board = CreateBoard();
+		showBoard(Board);
 		char userLetter = chooseLetter();
 		char computerLetter;
 		if(userLetter=='X') {
@@ -26,6 +27,16 @@ public class TicTocToe {
         	symbol=UserInput.next().toUpperCase().charAt(0);
         	return symbol;
     	}
+	public static void showBoard(char[] Board) {
+        System.out.println("Currently the Board Looks Like ");
+        System.out.println(" ");
+        System.out.println("\n "+ Board[1] + " | "+ Board[2] + " | " + Board[3]);
+        System.out.println("-----------");
+        System.out.println(" "+ Board[4] + " | " + Board[5] + " | " + Board[6]);
+        System.out.println("-----------");
+        System.out.println(" "+ Board[7] + " | " + Board[8] + " | " + Board[9]);
+        System.out.println(" ");
+    	}
 		public static char [] CreateBoard() {
 			char[] Board = new char[10];
 			for (int i = 0; i < Board.length; i++) {
@@ -33,10 +44,6 @@ public class TicTocToe {
 			}
 		return Board;
 	}
-
-
-	
-
 
 
 }
