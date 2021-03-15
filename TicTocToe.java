@@ -32,12 +32,11 @@ public class TicTocToe
 
         while (true)
         {
-            System.out.println("What is your next move ? (1-9");
-            int index = sc.nextInt();
-            if (Arrays.asList(validCells).contains(index) && isSpaceFree(board, index))
-                return index;
-
-        }
+		System.out.println("What is your next move ? (1-9");
+		int index = sc.nextInt();
+            	if (Arrays.asList(validCells).contains(index) && isSpaceFree(board, index))
+			return index;
+	}
 
     }
     private static boolean isSpaceFree(char[] board, int index)
